@@ -4,6 +4,8 @@ let modelIsLoading  = true;
 let crownImage;
 
 const FOREHEAD_POINT = 151;
+const LEFT_FOREHEAD = 104;
+const RIGHT_FOREHEAD = 333
 
 
 function preload() {
@@ -31,12 +33,25 @@ function setup() {
 
 function draw(){
 
-    
+    imageMode(CORNER)
     image(video, 0, 0, width, height);
     if(latestPrediction === null){
         return;
     }
     let foreheadLocation = latestPrediction.scaledMesh[FOREHEAD_POINT]
-    console.log(foreheadLocation)
-    image(crownImage, foreheadLocation[0] - 50,foreheadLocation[1] - 50, 100,100);
+    let leftForeheadLocation = latestPrediction.scaledMesh[LEFT_FOREHEAD];
+    let rightForeheadLocation = latestPrediction.scaledMesh[RIGHT_FOREHEAD];
+
+    
+
+    let foreheadWidth = dist(leftForeheadLocation[0],leftForeheadLocation[1],rightForeheadLocation[0],rightForeheadLocation[1]);
+
+    console.log(foreheadWidth)
+
+    let crownWidth = foreheadWidth * 3;
+    let crownHeight = (crownImage.height / crownImage.width) * crownWidth
+
+    imageMode(CENTER)
+    image(crownImage, foreheadLocation[0],foreheadLocation[1] - (crownHeight / 2), crownWidth,crownHeight);
+    
 }
