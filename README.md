@@ -1,4 +1,5 @@
-# Assignment 2: Make a reverse-engineered Snap Lens
+# Naruto Snap Lens 
+------
 
 Here are the requirements: 
 
