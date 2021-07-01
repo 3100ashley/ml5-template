@@ -3,11 +3,12 @@
 
 ## Description
 
-A Naurto based Snap Lens using p5.js
+A Naurto based Snap Lens using p5.js. Using event logic to add in a new drawing. 
 
 ## To Run
 
 - Using VS Code use the Live Server Extension. 
+- [Github pages link] (https://3100ashley.github.io/naruto-snap-lens--ml5/)
 
 
 ## Tools Used
